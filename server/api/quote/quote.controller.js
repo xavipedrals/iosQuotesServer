@@ -80,6 +80,19 @@ export function index(req, res) {
 
 }
 
+// Gets a list of Quotes
+export function getAll(req, res) {
+
+  Quote.findAsync()
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+
+  // Quote.find(function (err, quotes) {
+  //   return res.status(200).json(quotes);
+  // });
+
+}
+
 // Gets a single Quote from the DB
 export function show(req, res) {
   Quote.findByIdAsync(req.params.id)
