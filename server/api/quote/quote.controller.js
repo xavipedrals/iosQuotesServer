@@ -89,8 +89,6 @@ export function index(req, res) {
 // Gets a list of Quotes
 export function getAll(req, res) {
 
-
-
   Quote.findAsync()
     .then(respondWithResult(res))
     .catch(handleError(res));
@@ -103,11 +101,6 @@ export function getAll(req, res) {
 
 // Gets a list of the most recent 10 Quotes
 export function getRecent(req, res) {
-
-  console.log("Helloo");
-  // var options = {
-  //   "limit": 10
-  // };
 
   Quote.find({}).limit(10)
     .then(respondWithResult(res))
@@ -126,7 +119,6 @@ export function show(req, res) {
 export function create(req, res) {
 
   if (typeof req.body.background_color !== 'undefined' && req.body.background_color){
-    console.log("Hola, l'estic liant");
     Quote.createAsync(req.body)
       .then(respondWithResult(res, 201))
       .catch(handleError(res));
