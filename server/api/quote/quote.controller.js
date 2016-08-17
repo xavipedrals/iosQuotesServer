@@ -11,7 +11,12 @@
 
 import _ from 'lodash';
 import Quote from './quote.model';
+import http from 'http';
+//import request from 'request';
 
+var request = require('request');
+
+/** AUX FUNCTIONS **/
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
   return function(entity) {
@@ -59,6 +64,7 @@ function handleError(res, statusCode) {
   };
 }
 
+/**ENDPOINTS**/
 // Gets a list of Quotes
 export function index(req, res) {
   // Quote.findAsync()
@@ -83,6 +89,8 @@ export function index(req, res) {
 // Gets a list of Quotes
 export function getAll(req, res) {
 
+
+
   Quote.findAsync()
     .then(respondWithResult(res))
     .catch(handleError(res));
@@ -91,6 +99,19 @@ export function getAll(req, res) {
   //   return res.status(200).json(quotes);
   // });
 
+}
+
+// Gets a list of the most recent 10 Quotes
+export function getRecent(req, res) {
+
+  console.log("Helloo");
+  // var options = {
+  //   "limit": 10
+  // };
+
+  Quote.find({}).limit(10)
+    .then(respondWithResult(res))
+    .catch(handleError(res));
 }
 
 // Gets a single Quote from the DB
@@ -103,9 +124,45 @@ export function show(req, res) {
 
 // Creates a new Quote in the DB
 export function create(req, res) {
-  Quote.createAsync(req.body)
-    .then(respondWithResult(res, 201))
-    .catch(handleError(res));
+
+  if (typeof req.body.background_color !== 'undefined' && req.body.background_color){
+    console.log("Hola, l'estic liant");
+    Quote.createAsync(req.body)
+      .then(respondWithResult(res, 201))
+      .catch(handleError(res));
+  }
+  else {
+    var mashapeKey = 'hDNI5fg8wemshbHH6EWyg8xXdBTGp1qv7isjsnjJWy4o3Yxfr2';
+    request({
+      url: 'https://apicloud-colortag.p.mashape.com/tag-url.json', //URL to hit
+      qs: {url: req.body.background_img}, //Query string data
+      method: 'GET', //Specify the method
+      headers: { //We can define headers too
+        'Content-Type': 'application/json',
+        'X-Mashape-Key': mashapeKey
+      }
+    }, function (error, response, body) {
+      if (error) {
+        console.log(error);
+      } else {
+        var obj = JSON.parse(body);
+        //This is the dominant color
+        console.log(obj.tags[0]);
+
+        var newQoute = Quote({
+          text: req.body.text,
+          background_img: req.body.background_img,
+          background_color: obj.tags[0].color,
+          author_name: req.body.author_name,
+          author_photo: req.body.author_photo
+        });
+        Quote.createAsync(newQoute)
+          .then(respondWithResult(res, 201))
+          .catch(handleError(res));
+      }
+    });
+
+  }
 }
 
 // Updates an existing Quote in the DB

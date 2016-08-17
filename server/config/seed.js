@@ -42,10 +42,11 @@ Thing.find({}).removeAsync()
   Quote.find({}).removeAsync()
     .then(() => {
       Quote.create({
-        quote: 'I learned that courage was not the absence of fear, but the triumph over it. The brave man is not he who does not feel afraid, but he who conquers that fear',
-        author: 'Nelson Mandela',
-        background: 'http://images.wisegeek.com/sky.jpg',
-        authorBackground: 'https://pbs.twimg.com/profile_images/643498811118219264/VRQ00g5u.jpg'
+        text: 'I learned that courage was not the absence of fear, but the triumph over it. The brave man is not he who does not feel afraid, but he who conquers that fear',
+        background_img: 'http://images.wisegeek.com/sky.jpg',
+        background_color: 'f45656',
+        author_name: 'Nelson Mandela',
+        author_photo: 'https://pbs.twimg.com/profile_images/643498811118219264/VRQ00g5u.jpg'
       }, {
         quote: 'You cannot escape the responsibility of tomorrow by evading it today',
         author: 'Abraham Lincoln',
