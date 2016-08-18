@@ -43,54 +43,63 @@ Thing.find({}).removeAsync()
     .then(() => {
       Quote.create({
         text: 'I learned that courage was not the absence of fear, but the triumph over it. The brave man is not he who does not feel afraid, but he who conquers that fear',
-        background_img: 'http://images.wisegeek.com/sky.jpg',
-        background_color: 'f45656',
+        background_img: 'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?w=1500&fit=max',
+        background_color: '#446331',
         author_name: 'Nelson Mandela',
         author_photo: 'https://pbs.twimg.com/profile_images/643498811118219264/VRQ00g5u.jpg'
       }, {
-        quote: 'You cannot escape the responsibility of tomorrow by evading it today',
-        author: 'Abraham Lincoln',
-        background: 'http://www.bioversityinternational.org/fileadmin/user_upload/about_us/news/Landscape/Landscape_Chile_Pablo_CM.jpg',
-        authorBackground: 'https://pbs.twimg.com/profile_images/649320022586691584/VxKYEkEG.jpg'
+        text: 'You cannot escape the responsibility of tomorrow by evading it today',
+        author_name: 'Abraham Lincoln',
+        background_color: '#62ACDF',
+        background_img: 'https://images.unsplash.com/photo-1468711007652-03aab17ae4d2?w=1500&fit=max',
+        author_photo: 'https://pbs.twimg.com/profile_images/649320022586691584/VxKYEkEG.jpg'
       }, {
-        quote: 'Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment',
-        author: 'Buddha',
-        background: 'http://www.karmaquests.com/images/Burma%20Pagan%20landscape.jpg',
-        authorBackground: 'https://static-s.aa-cdn.net/img/ios/912702199/d14e1a4a7e8784859bce0883eb3d0966'
+        text: 'Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment',
+        author_name: 'Buddha',
+        background_color: '#E9BD7B',
+        background_img: 'https://images.unsplash.com/photo-1468608882757-73eb99740607?w=1500&fit=max',
+        author_photo: 'https://static-s.aa-cdn.net/img/ios/912702199/d14e1a4a7e8784859bce0883eb3d0966'
       }, {
-        quote: 'The future belongs to those who prepare for it today.',
-        author: 'Malcolm X',
-        background: 'http://www.wallpapersonview.com/wallpapers/4/landscape_amazing_nature_quality_lake_background_picture-107.jpg',
-        authorBackground: 'https://pbs.twimg.com/profile_images/669655478146740224/IXUkXfxo.png'
+        text: 'The future belongs to those who prepare for it today.',
+        author_name: 'Malcolm X',
+        background_color: '#846560',
+        background_img: 'https://images.unsplash.com/photo-1468598052915-dd7b597b5a75?w=1500&fit=max',
+        author_photo: 'https://pbs.twimg.com/profile_images/669655478146740224/IXUkXfxo.png'
       }, {
-        quote: "Intelligence is the ability to adapt to change",
-        author: "Stephen Hawking",
-        background: "http://www.featurepics.com/FI/Thumb300/20090619/Beautiful-Forest-Landscape-Nature-Background-1220246.jpg",
-        authorBackground: "https://pbs.twimg.com/profile_images/589926106221936640/YjN9bPrP.jpg"
+        text: "Intelligence is the ability to adapt to change",
+        author_name: "Stephen Hawking",
+        background_color: '#355355',
+        background_img: "https://images.unsplash.com/photo-1468532988488-ffa1203ee384?w=1500&fit=max",
+        author_photo: "https://pbs.twimg.com/profile_images/589926106221936640/YjN9bPrP.jpg"
       }, {
-        quote: "Very little is needed to make a happy life; it is all within yourself, in your way of thinking",
-        author: "Marcus Aurelius",
-        background: "http://www.ohdwallpapers.com/wp-content/uploads/2015/11/forest-landscape-desktop-backgrounds.jpg",
-        authorBackground: "https://pbs.twimg.com/profile_images/626426959329767424/YWRQBSN2.jpg"
+        text: "Very little is needed to make a happy life; it is all within yourself, in your way of thinking",
+        author_name: "Marcus Aurelius",
+        background_color: '#46513D',
+        background_img: "https://images.unsplash.com/photo-1465021696408-57e53e164d0e?w=1500&fit=max",
+        author_photo: "https://pbs.twimg.com/profile_images/626426959329767424/YWRQBSN2.jpg"
       }, {
-        quote: "Be a yardstick of quality. Some people aren't used to an environment where excellence is expected",
-        author: "Steve Jobs",
-        background: "http://s3.favim.com/orig/150211/background-beauty-cool-fav-Favim.com-2469443.jpg",
-        authorBackground: "https://pbs.twimg.com/profile_images/587100329986158592/BKaRJuri.jpg"
+        text: "Be a yardstick of quality. Some people aren't used to an environment where excellence is expected",
+        author_name: "Steve Jobs",
+        background_color: '#ABAFBB',
+        background_img: "https://images.unsplash.com/photo-1448518340475-e3c680e9b4be?w=1500&fit=max",
+        author_photo: "https://pbs.twimg.com/profile_images/587100329986158592/BKaRJuri.jpg"
       }, {
-        quote: "My mama always used to tell me: 'If you can't find somethin' to live for, you best find somethin' to die for",
-        author: "Tupac Shakur",
-        background: "http://www.planwallpaper.com/static/images/nature_backgrounds_elegant_backgrounds_image_hq_7004.jpg",
-        authorBackground: "https://pbs.twimg.com/profile_images/666283206274998272/L_M8ndSj.jpg"
+        text: "My mama always used to tell me: 'If you can't find somethin' to live for, you best find somethin' to die for",
+        author_name: "Tupac Shakur",
+        background_color: '#939597',
+        background_img: "https://images.unsplash.com/photo-1448535544744-01b09435c00f?w=1500&fit=max",
+        author_photo: "https://pbs.twimg.com/profile_images/666283206274998272/L_M8ndSj.jpg"
       }, {
-        quote: "If I have seen further than others, it is by standing upon the shoulders of giants",
-        author: "Isaac Newton",
-        background: "http://i00.i.aliimg.com/wsphoto/v0/2046736798/10x10FT-Backdrop-Autumn-Maple-Trees-Leaves-Park-Wedding-Portrait-Photography-Studio-Customize-Background-Vinyl-8x8-8x15.jpg",
-        authorBackground: "https://pbs.twimg.com/profile_images/659762372639199233/rdS2EJ-5.jpg"
+        text: "If I have seen further than others, it is by standing upon the shoulders of giants",
+        author_name: "Isaac Newton",
+        background_color: '#545853',
+        background_img: "https://images.unsplash.com/photo-1446034295857-c39f8844fad4?w=1500&fit=max",
+        author_photo: "https://pbs.twimg.com/profile_images/659762372639199233/rdS2EJ-5.jpg"
       }, {
-        quote: "A man who dares to waste one hour of time has not discovered the value of life",
-        author: "Charles Darwin",
-        background: "http://4hdwallpapers.com/wp-content/uploads/2013/04/Rain-Background-1024x640.jpg",
-        authorBackground: "https://pbs.twimg.com/profile_images/378800000856487986/VG25wfXC.jpeg"
+        text: "A man who dares to waste one hour of time has not discovered the value of life",
+        author_name: "Charles Darwin",
+        background_color: '#787673',
+        background_img: "https://images.unsplash.com/photo-1466276534225-c8d52b266271?w=1500&fit=max",
+        author_photo: "https://pbs.twimg.com/profile_images/3781500000856487986/VG25wfXC.jpeg"
       });
     });
